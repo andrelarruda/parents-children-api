@@ -1,4 +1,5 @@
-import { Column, PrimaryGeneratedColumn, Entity, } from "typeorm"
+import { Column, PrimaryGeneratedColumn, Entity, OneToMany, } from "typeorm"
+import { Child } from "../child/child.entity"
 
 @Entity()
 export class Parent {
@@ -13,4 +14,7 @@ export class Parent {
 
     @Column()
     birthDate: Date
+
+    @OneToMany(() => Child, (child) => child.parent)
+    children: Child[]
 }

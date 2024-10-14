@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
+import { Parent } from "../parent/parent.entity"
 
 @Entity()
 export class Child {
@@ -14,7 +15,6 @@ export class Child {
     @Column()
     birthDate: Date
 
-    // father: Parent
-
-    // mother: Parent
+    @ManyToOne(() => Parent, (parent) => parent.children)
+    parent: Parent
 }
