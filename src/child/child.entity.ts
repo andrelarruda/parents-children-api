@@ -1,10 +1,7 @@
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
-
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
-
-
-export class Parent {
-
+@Entity()
+export class Child {
     @PrimaryGeneratedColumn()
     id: number
     
@@ -17,4 +14,7 @@ export class Parent {
     @Column()
     birthDate: Date
 
+    // father: Parent
+
+    // mother: Parent
 }
