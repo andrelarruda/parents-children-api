@@ -1,4 +1,12 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { ParentService } from './parent.service';
 
-@Controller('parent')
-export class ParentController {}
+@Controller('parents')
+export class ParentController {
+    constructor(private readonly parentService: ParentService) {}
+
+    @Get()
+    async findAll() {
+        return this.parentService.findAll();
+    }
+}

@@ -12,4 +12,12 @@ export class ChildService {
     async findAll(): Promise<Child[]> {
         return await this.childRepository.find();
     }
+
+    // findById
+
+    // create
+
+    // update
+
+    // delete
 }
